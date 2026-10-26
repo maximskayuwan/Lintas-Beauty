@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lintas Beauty — Skincare sesuai kondisi kulitmu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap bar">
+      <a class="logo" href="#">Lintas<span>Beauty</span></a>
+      <input id="search" type="search" placeholder="Cari serum, sunscreen, toner..." aria-label="Cari produk">
+      <button id="cartBtn" class="cart-btn" aria-label="Buka keranjang">Keranjang <b id="cartCount">0</b></button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div>
+        <h1>Kenali kulitmu dulu, baru pilih produknya.</h1>
+        <p>Jawab 4 pertanyaan singkat, lalu lihat produk dan harga yang cocok untuk jenis kulitmu.</p>
+        <button id="startQuiz" class="btn">Cek jenis kulit saya</button>
+      </div>
+      <div id="skinCard" class="skin-card" hidden>
+        <small>Jenis kulitmu</small>
+        <strong id="skinName"></strong>
+        <p id="skinDesc"></p>
+        <button id="resetSkin" class="link">Ulangi tes</button>
+      </div>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <section aria-labelledby="h-concern">
+      <h2 id="h-concern">Pilih kondisi kulit</h2>
+      <div id="concerns" class="chips"></div>
+    </section>
+
+    <section>
+      <div class="list-head">
+        <h2 id="listTitle">Semua produk</h2>
+        <div class="tools">
+          <select id="cat" aria-label="Kategori"></select>
+          <select id="sort" aria-label="Urutkan">
+            <option value="rec">Paling relevan</option>
+            <option value="low">Harga terendah</option>
+            <option value="high">Harga tertinggi</option>
+            <option value="sold">Terlaris</option>
+          </select>
+        </div>
+      </div>
+      <div id="grid" class="grid"></div>
+      <p id="empty" class="empty" hidden>Belum ada produk yang cocok. Coba ganti kondisi kulit atau kategori.</p>
+    </section>
+  </main>
+
+  <footer class="foot wrap">
+    Prototipe untuk JBCC 2026. Data produk dan penjual hanya contoh. Hasil tes bukan diagnosis medis.
+  </footer>
+
+  <dialog id="quiz">
+    <form method="dialog"><button class="x" aria-label="Tutup">×</button></form>
+    <div id="quizBody"></div>
+  </dialog>
+
+  <aside id="drawer" class="drawer" aria-label="Keranjang">
+    <div class="d-head"><h2>Keranjang</h2><button id="closeCart" class="x" aria-label="Tutup keranjang">×</button></div>
+    <div id="cartItems"></div>
+    <div class="d-foot"><span>Total</span><strong id="cartTotal">Rp0</strong></div>
+    <button class="btn full">Checkout</button>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
